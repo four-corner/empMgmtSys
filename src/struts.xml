@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+	<constant name="struts.devMode" value="true" />
+	<constant name="struts.action.extension" value="alok" />
+	<package name="alokIndia" namespace="/alokIndia" extends="struts-default">
+		<result-types>
+			<result-type name="tiles"
+				class="org.apache.struts2.views.tiles.TilesResult" />
+		</result-types>
+		<action name="LoginDisplay">
+			<result type="tiles">ALOKLoginDef</result>
+		</action>
+		<action name="LoginSubmit" class="com.alok.struts2.EmployeeAction">
+			<result name="success" type="tiles">ALOKHomeDef</result>
+			<result name="input" type="tiles">ALOKLoginDef</result>
+			<exception-mapping result="input"
+				exception="com.alok.exception.EmployeeNotFoundException" />
+		</action>
+		<action name="PostRequestDisplay">
+			<result type="tiles">PostRequestDef</result>
+		</action>
+		<action name="PostRequestSubmit" class="com.alok.struts2.RequestAction">
+			<result name="success" type="tiles">PostRequestSuccessDef</result>
+			<result name="input" type="tiles">PostRequestDef</result>
+		</action>
+	</package>
+</struts>

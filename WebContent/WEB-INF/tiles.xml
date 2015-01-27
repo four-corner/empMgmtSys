@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?> 
+
+<!DOCTYPE tiles-definitions PUBLIC "-//Apache Software Foundation//DTD Tiles Configuration 2.0//EN"
+ "http://tiles.apache.org/dtds/tiles-config_2_0.dtd">
+
+
+<tiles-definitions>
+
+	<definition name="ALOKLoginDef" template="/AlokLayout1.jsp">
+		<put-attribute name="HEADER" value="/WEB-INF/header.jsp"></put-attribute>
+		<put-attribute name="BODY" value="/WEB-INF/login.jsp"></put-attribute>
+		<put-attribute name="FOOTER" value="/WEB-INF/footer.jsp"></put-attribute>
+	</definition>
+
+	<definition name="ALOKBaseDef" template="/AlokLayout2.jsp">
+		<put-attribute name="HEADER" value="/WEB-INF/header.jsp"></put-attribute>
+		<put-attribute name="LMENU" value="/WEB-INF/menu.jsp"></put-attribute>
+		<put-attribute name="BODY" value=""></put-attribute>
+		<put-attribute name="FOOTER" value="/WEB-INF/footer.jsp"></put-attribute>
+	</definition>
+
+	<definition name="ALOKHomeDef" extends="ALOKBaseDef">
+		<put-attribute name="BODY" value="/WEB-INF/welcome.jsp"></put-attribute>
+	</definition>
+
+	<definition name="PostRequestDef" extends="ALOKBaseDef">
+		<put-attribute name="BODY" value="/WEB-INF/postRequest.jsp"></put-attribute>
+	</definition>
+
+	<definition name="PostRequestSuccessDef" extends="ALOKBaseDef">
+		<put-attribute name="BODY" value="/WEB-INF/postRequestSuccess.jsp"></put-attribute>
+	</definition>
+</tiles-definitions> 
